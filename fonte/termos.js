@@ -34,5 +34,23 @@ const TERMOS = [
     video: "videos/icp.mp4",
     poster: "videos/icp.jpg",
     data: "18/11/2026"
+  },
+  {
+    id: "jtbd", n: "03", termo: "JTBD",
+    en: "Jobs To Be Done", pt: "Trabalho a Ser Feito",
+    definicao: "O problema que a pessoa precisa resolver, e o resultado que ela espera, quando escolhe um produto ou serviço.",
+    porque: "Quando você entende o problema que a pessoa quer resolver, descobre com quem você compete de verdade: qualquer coisa que ela já usa hoje para isso, até uma planilha, um tutorial no YouTube ou um amigo que ajuda. Seu MVP nasce daí: a menor versão que resolve esse problema melhor do que o jeito que ela resolve hoje.",
+    modelo: "Quem me procura para arrumar o LinkedIn não quer um perfil bonito. Quer um trabalho. O perfil é o que a pessoa contrata. Ser encontrada, ser chamada para conversar e conseguir a vaga é o job. Se eu vendo só o perfil bonito, falo com o que ela compra. Se eu falo do trabalho novo, falo com o que ela quer.",
+    aplicar: [
+      ["Troque de lugar", "Se coloque no papel de quem busca. Esqueça o seu produto por um minuto."],
+      ["Descubra", "Como a pessoa resolve isso hoje: o que ela já usa, paga ou improvisa. Essa é a sua concorrência real."],
+      ["Use", "As palavras que ela usaria para buscar ajuda, e não os termos técnicos do seu mercado."],
+      ["Mostre", "O resultado que ela quer alcançar, e não só o que você entrega."]
+    ],
+    contrasteA: "JTBD ≠ ICP",
+    contrasteB: "O ICP define quem. O JTBD revela o que essa pessoa quer resolver.",
+    video: "videos/jtbd.mp4",
+    poster: "videos/jtbd.jpg",
+    data: "25/11/2026"
   }
 ];
