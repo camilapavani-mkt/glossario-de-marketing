@@ -1,0 +1,205 @@
+<title>Glossário de Marketing</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&display=swap">
+<style>
+/* Layout: índice A–Z no topo; um verbete por vez. No celular, uma coluna; no computador, motion à esquerda e texto à direita. O motion abre o verbete em destaque; abaixo, só o que o vídeo não conta. Design System C&P. */
+:root{
+  --fundo:#F7F3EE; --tinta:#1C1917; --tinta-suave:#7C6A56; --cartao:#E8DDD0; --rotulo:#8B3A52; --acento:#C9A882; --ponto:#8B3A52;
+  --chip-ativo-fundo:#1C1917; --chip-ativo-tinta:#F7F3EE; --hover-fundo:#8B3A52; --hover-tinta:#F7F3EE; --hover-num:#C9A882;
+  --serif:"Fraunces","DM Serif Display",Georgia,serif; --sans:"DM Sans","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --fundo:#1C1917; --tinta:#F7F3EE; --tinta-suave:#E8DDD0; --cartao:#2C3E35; --rotulo:#C9A882; --acento:#C9A882; --ponto:#C9A882;
+  --chip-ativo-fundo:#C9A882; --chip-ativo-tinta:#1C1917; --hover-fundo:#C9A882; --hover-tinta:#1C1917; --hover-num:#8B3A52; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --fundo:#1C1917; --tinta:#F7F3EE; --tinta-suave:#E8DDD0; --cartao:#2C3E35; --rotulo:#C9A882; --acento:#C9A882; --ponto:#C9A882;
+  --chip-ativo-fundo:#C9A882; --chip-ativo-tinta:#1C1917; --hover-fundo:#C9A882; --hover-tinta:#1C1917; --hover-num:#8B3A52; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--fundo);color:var(--tinta);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.serif{font-family:var(--serif);font-weight:400;font-variation-settings:'SOFT' 50,'WONK' 0}
+.rotulo{font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--rotulo)}
+header{display:flex;flex-direction:column;gap:14px}
+.topo{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{height:40px;width:auto;display:block}
+.logo-escuro{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .logo-claro{display:none}:root:not([data-theme="light"]) .logo-escuro{display:block}}
+:root[data-theme="dark"] .logo-claro{display:none} :root[data-theme="dark"] .logo-escuro{display:block}
+h1{margin:0;font-size:clamp(40px,7vw,64px);line-height:1;letter-spacing:-.01em;text-wrap:balance}
+h1 .ponto{color:var(--ponto)}
+.intro{margin:0;font-size:18px;color:var(--tinta-suave);max-width:60ch}
+.indice{margin-top:28px;padding-block:16px;border-top:1px solid var(--acento);border-bottom:1px solid var(--acento);display:flex;flex-direction:column;gap:12px}
+.indice-topo{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
+.busca{font:inherit;font-size:16px;width:min(100%,280px);padding:10px 14px;border-radius:12px;border:1px solid var(--acento);background:transparent;color:var(--tinta)}
+.busca::placeholder{color:var(--tinta-suave)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:16px;color:var(--tinta);background:var(--cartao);border:0;border-radius:999px;padding:8px 16px;min-height:44px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.chip[aria-pressed="true"]{background:var(--chip-ativo-fundo);color:var(--chip-ativo-tinta)}
+.chip .novo{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--rotulo)}
+.chip[aria-pressed="true"] .novo{color:inherit;opacity:.8}
+.chip:focus-visible,.busca:focus-visible{outline:2px solid var(--rotulo);outline-offset:2px}
+.vazio{color:var(--tinta-suave)}
+main{margin-top:32px}
+.verbete{display:flex;flex-direction:column;gap:32px}
+.motion{width:min(100%,560px);max-width:100%;margin-inline:auto;aspect-ratio:1080/1350;border-radius:12px;background:var(--cartao);display:block}
+.cabecalho{display:flex;flex-direction:column;gap:12px}
+.termo{margin:0;font-size:clamp(64px,12vw,112px);line-height:.9;letter-spacing:-.02em}
+.termo .ponto{color:var(--ponto)}
+.origem .en{font-family:var(--serif);font-style:italic;font-size:22px}
+.origem .pt{color:var(--tinta-suave)}
+.definicao{margin:0;font-size:clamp(22px,3.6vw,28px);line-height:1.25}
+.lado{display:flex;flex-direction:column;gap:28px;min-width:0}
+.meta-topo{display:flex;justify-content:space-between;align-items:baseline;gap:12px;color:var(--tinta-suave);font-size:14px}
+.meta-topo .n{font-family:var(--serif);font-size:18px}
+.bloco{display:flex;flex-direction:column;gap:8px}
+.bloco p{margin:0;max-width:62ch}
+.modelo{font-size:20px;line-height:1.45}
+.passos{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.passos li{background:var(--cartao);border-radius:12px;padding:14px 18px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;align-items:baseline}
+.passos .num{font-family:var(--serif);font-size:22px;color:var(--rotulo);font-variant-numeric:tabular-nums}
+.passos .v{font-family:var(--serif);font-size:20px}
+.passos .d{grid-column:2}
+.passos li{transition:background-color .25s ease,color .25s ease,transform .25s ease}
+.passos li .num{transition:color .25s ease}
+@media (hover:hover){.passos li:hover{background:var(--hover-fundo);color:var(--hover-tinta);transform:translateY(-2px)}.passos li:hover .num{color:var(--hover-num)}}
+@media (prefers-reduced-motion:reduce){.passos li,.passos li .num{transition:none}.passos li:hover{transform:none}}
+.link{font-size:14px;color:var(--tinta-suave);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.copiar{font:inherit;font-size:14px;color:var(--tinta);background:transparent;border:1px solid var(--acento);border-radius:999px;padding:6px 14px;min-height:36px;cursor:pointer;max-width:100%;overflow-wrap:anywhere}
+.copiar:focus-visible{outline:2px solid var(--rotulo);outline-offset:2px}
+footer{margin-top:64px;border-top:1px solid var(--acento);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:15px;color:var(--tinta-suave)}
+footer .nome{font-family:var(--serif);font-size:20px;color:var(--tinta)}
+footer .canais{display:flex;flex-direction:column;gap:4px}
+footer .canais a{color:var(--tinta-suave);text-decoration:underline;text-decoration-color:var(--acento);text-underline-offset:3px;min-height:24px}
+footer .canais a:hover{color:var(--rotulo)}
+footer .canais a:focus-visible{outline:2px solid var(--rotulo);outline-offset:2px}
+@media (min-width:1000px){
+  .wrap{max-width:1180px;padding-inline:40px}
+  .verbete{display:grid;grid-template-columns:minmax(0,500px) minmax(0,1fr);gap:24px 64px;align-items:start}
+  .verbete .meta-topo{grid-column:1/-1}
+  .verbete .motion{width:100%;margin:0;position:sticky;top:24px}
+  .verbete .cabecalho{position:sticky;top:24px}
+  .lado{gap:32px;padding-top:calc(500px * 60 / 1080)}
+}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="topo">
+      <div class="rotulo">✦ Camila Pavani</div>
+      <img class="logo logo-claro" alt="cp." src="data:image/png;base64,__LOGO_CAFE__">
+      <img class="logo logo-escuro" alt="cp." src="data:image/png;base64,__LOGO_LEITE__">
+    </div>
+    <h1 class="serif">Glossário de Marketing<span class="ponto">.</span></h1>
+    <p class="intro">CAC, MVP, LTV, stakeholder, branding. O Marketing ainda parece sopa de letrinhas? Então você está no lugar certo. Os termos e as siglas da área explicados de um jeito simples e prático.</p>
+  </header>
+
+  <nav class="indice" aria-label="Termos em ordem alfabética">
+    <div class="indice-topo">
+      <div class="rotulo" id="contagem">Termos</div>
+      <label class="sr" for="busca">Filtrar termos</label>
+      <input id="busca" class="busca" type="search" placeholder="Filtrar: ICP, funil…" autocomplete="off">
+    </div>
+    <div class="chips" id="chips"></div>
+  </nav>
+
+  <main id="verbete" aria-live="polite"></main>
+
+  <footer>
+    <div>
+      <div class="nome">Camila Pavani</div>
+      <div>Marketing &amp; Career Strategist</div>
+    </div>
+    <div class="canais">
+      <a href="https://www.linkedin.com/in/camilapavanii" target="_blank" rel="noopener">LinkedIn: camilapavanii</a>
+      <a href="https://www.instagram.com/camila_pavani" target="_blank" rel="noopener">Instagram: @camila_pavani</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+// Verbetes. Padrão: conceito, modelo, como aplicar. Para acrescentar um termo, adicione um objeto à lista.
+__TERMOS__
+
+const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+const maisRecente = [...TERMOS].sort((a, b) => Number(b.n) - Number(a.n))[0];
+const alfabetica = [...TERMOS].sort((a, b) => a.termo.localeCompare(b.termo, "pt-BR"));
+const chips = document.getElementById("chips");
+const busca = document.getElementById("busca");
+const area = document.getElementById("verbete");
+let atual = null;
+
+function bloco(rotulo, filho){ const b = el("section", "bloco"); b.append(el("div", "rotulo", rotulo), filho); return b; }
+
+function mostrar(t){
+  atual = t;
+  area.replaceChildren();
+  const art = el("article", "verbete"); art.id = t.id;
+  const titulo = el("h2", "sr", t.termo + ": " + t.en);
+  const lado = el("div", "lado");
+  const meta = el("div", "meta-topo");
+  meta.append(el("span", null, "Publicado em " + t.data), el("span", "n", "nº " + t.n));
+
+  let frente;
+  if (t.video){
+    frente = document.createElement("video");
+    frente.className = "motion"; if (t.poster) frente.poster = t.poster; frente.src = t.video; frente.muted = true; frente.loop = true; frente.autoplay = true; frente.playsInline = true;
+    frente.setAttribute("aria-label", "Animação do verbete " + t.termo + ": " + t.definicao);
+  } else {
+    frente = el("div", "cabecalho");
+    const h = el("div", "termo serif", t.termo); h.append(el("span", "ponto", "."));
+    const o = el("div", "origem"); o.append(el("div", "en", t.en), el("div", "pt", t.pt));
+    frente.append(h, o, el("p", "definicao serif", t.definicao));
+  }
+
+  if (t.porque) lado.append(bloco("Por que importa", el("p", null, t.porque)));
+  if (t.modelo) lado.append(bloco("O modelo", el("p", "modelo serif", t.modelo)));
+  if (t.aplicar && t.aplicar.length){
+    const ol = el("ol", "passos");
+    t.aplicar.forEach((p, i) => {
+      const li = el("li");
+      li.append(el("span", "num", String(i + 1).padStart(2, "0")), el("span", "v", p[0] + "."), el("span", "d", p[1]));
+      ol.append(li);
+    });
+    lado.append(bloco("Como aplicar", ol));
+  }
+  if (!t.video && t.contrasteA) lado.append(bloco(t.contrasteA, el("p", null, t.contrasteB)));
+
+  const link = el("div", "link");
+  const url = location.href.split("#")[0] + "#" + t.id;
+  const btn = el("button", "copiar", "Copiar link deste termo"); btn.type = "button";
+  btn.addEventListener("click", () => {
+    const ok = () => { btn.textContent = "Link copiado"; setTimeout(() => { btn.textContent = "Copiar link deste termo"; }, 1800); };
+    try { navigator.clipboard.writeText(url).then(ok, () => { btn.textContent = url; }); } catch (e) { btn.textContent = url; }
+  });
+  link.append(btn);
+  lado.append(link);
+
+  art.append(titulo, meta, frente, lado);
+  area.append(art);
+  if (location.hash.slice(1) !== t.id) { try { history.replaceState(null, "", "#" + t.id); } catch (e) {} }
+  desenharChips(busca.value);
+}
+
+function desenharChips(filtro){
+  const q = (filtro || "").trim().toLowerCase();
+  chips.replaceChildren();
+  const lista = alfabetica.filter(t => !q || [t.termo, t.en, t.pt].join(" ").toLowerCase().includes(q));
+  if (!lista.length){ chips.append(el("span", "vazio", "Nenhum termo com esse nome ainda.")); return; }
+  lista.forEach(t => {
+    const c = el("button", "chip"); c.type = "button";
+    c.setAttribute("aria-pressed", String(!!atual && atual.id === t.id));
+    c.append(document.createTextNode(t.termo));
+    if (t.id === maisRecente.id) c.append(el("span", "novo", "novo"));
+    c.addEventListener("click", () => mostrar(t));
+    chips.append(c);
+  });
+}
+
+document.getElementById("contagem").textContent = TERMOS.length + (TERMOS.length === 1 ? " termo, de A a Z" : " termos, de A a Z");
+busca.addEventListener("input", () => desenharChips(busca.value));
+window.addEventListener("hashchange", () => { const t = TERMOS.find(x => x.id === location.hash.slice(1)); if (t && t !== atual) mostrar(t); });
+mostrar(TERMOS.find(t => t.id === location.hash.slice(1)) || maisRecente);
+</script>
